@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
 
-  resources :users, only: []
+  resources :users
   resources :groups, only: []
 
   get '/login', to: "login#new"
