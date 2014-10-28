@@ -13,11 +13,14 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :groups, only: []
+  resources :groups
 
   get '/login', to: "login#new"
   post   "/login",  to: "login#create"
   delete "/logout", to: "login#destroy"
+
+  get  "/register", to: "registrations#new"
+  post "/register", to: "registrations#create"
 
 
   # Example of regular route:
