@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :users
   resources :groups
 
+  get '/join/:group_id', to: 'groups#join', as: :join
+
   get '/login', to: "login#new"
   post   "/login",  to: "login#create"
   delete "/logout", to: "login#destroy"
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   post "/register", to: "registrations#create"
 
   post "logout", to: "login#destroy"
+
 
   
  #group GET    /groups/:id(.:format)      groups#show

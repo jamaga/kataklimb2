@@ -1,9 +1,18 @@
 <h1><%= @group.name %></h1>
 
-<h2> you are in the group </h2>
+<h2> group </h2>
 
 <dl class="dl-horizontal">
 
 <%= button_to "Delete this group", group_path(@group), method: :delete %> </dl>
 
-<%= link_to "Update this group", edit_group_path(@group.id)%>
+<%= link_to "Update this group", edit_group_path(@group.id)%>  </br>
+
+
+<% if current_user %>
+	<%= link_to 'join', join_path(@group.id) %>
+<% else %>
+ <% link_to 'log in to join the group', login_path %>
+ <% end %>
+
+
