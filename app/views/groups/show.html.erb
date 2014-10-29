@@ -1,10 +1,18 @@
 <h1><%= @group.name %></h1>
 
-<h2> group </h2>
+<h3>Members of this Group:</h3>
+
+<ul>
+<% @group.users.each do |user| %>
+<li><%= user.name %></li>
+<% end %>
+</ul>
+
+
 
 <dl class="dl-horizontal">
-
-<%= button_to "Delete this group", group_path(@group), method: :delete %> </dl>
+	<%= button_to "Delete this group", group_path(@group), method: :delete %> 
+</dl>
 
 <%= link_to "Update this group", edit_group_path(@group.id)%>  </br>
 
