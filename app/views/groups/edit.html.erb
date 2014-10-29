@@ -1,0 +1,10 @@
+<h1> edit the group </h1>
+
+<%= form_for [@group] do |p| %>
+	<%= p.label :name %>
+	<%= p.text_field :name %>
+	<br>
+
+	<%= p.submit 'save' %>
+	<%= link_to 'cancel', group_path(@group) %>
+<% end %>

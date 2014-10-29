@@ -4,4 +4,6 @@
 
 <dl class="dl-horizontal">
 
-<%= button_to "DESTROY THIS USER", user_path(@user), method: :delete %>
+<%= button_to "Delete this user", user_path(@user), method: :delete %>
+
+<%= link_to "Update this user", edit_user_path(@user.id)%>

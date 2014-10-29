@@ -4,4 +4,6 @@
 
 <dl class="dl-horizontal">
 
-<%= button_to "DESTROY THIS GROUP", group_path(@group), method: :delete %>
+<%= button_to "Delete this group", group_path(@group), method: :delete %> </dl>
+
+<%= link_to "Update this group", edit_group_path(@group.id)%>
