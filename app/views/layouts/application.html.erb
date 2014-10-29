@@ -8,6 +8,9 @@
 </head>
 <body>
 	<div class="container">
+		<% flash.each do |key, value| %>
+	    <%= content_tag(:div, value, :class => "flash #{key}") %>
+	  <% end %>
 		<header>
 			<h1> KataKlimb - page to connect people who want to climb in Barcelona and around it  </h1>
 			<nav>
