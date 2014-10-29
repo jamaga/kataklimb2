@@ -1,9 +1,11 @@
 class GroupsController < ApplicationController
+
 	def index
+		@groups = Group.all
 	end
 
 	def show
-    @user = Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   def destroy

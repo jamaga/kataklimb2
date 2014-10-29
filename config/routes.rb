@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get  "/register", to: "registrations#new"
   post "/register", to: "registrations#create"
 
+  post "logout", to: "login#destroy"
+
+  
+ #group GET    /groups/:id(.:format)      groups#show
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
