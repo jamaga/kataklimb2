@@ -1,0 +1,7 @@
+<h1><%= @group.name %></h1>
+
+<h2> you are in the group </h2>
+
+<dl class="dl-horizontal">
+
+<%= button_to "DESTROY THIS GROUP", group_path(@group), method: :delete %>

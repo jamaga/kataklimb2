@@ -1,7 +1,7 @@
 class LoginController < ApplicationController
 
-
 	def new
+		@user = User.new
 	end
 
   def create
@@ -15,11 +15,12 @@ class LoginController < ApplicationController
       flash[:error] = "Login was not sucessful"
       redirect_to login_path
     end
-
   end
 
   def destroy
     session[:current_user_id] = nil
+    flash[:notice] = "You have successfully logged out."
+    redirect_to root_url
   end
-
 end
+
