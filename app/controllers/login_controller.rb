@@ -13,7 +13,7 @@ class LoginController < ApplicationController
       redirect_to user_path(user.id)
     else
       flash[:error] = "Login was not sucessful"
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 

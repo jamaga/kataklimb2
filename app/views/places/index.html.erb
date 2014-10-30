@@ -1,6 +1,12 @@
 <h2> list of all places: </h2>
 
+
+<% if current_user %>
 	<%= link_to 'create new place', new_place_path%>
+<% else %>
+<p><%= 'in order to list new places, login' %></p>
+<% end %>
+
  <ul>
  <% @places.each do |place| %>
  	<li><%= link_to place.name, place_path(place)%></li>
