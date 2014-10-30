@@ -20,9 +20,16 @@
 
 <%# if @group.users.include?(current_user)g.users.include?(u) %>
 
-
 <% if current_user && !@group.users.include?(current_user) %>
 	<%= link_to 'join', join_path(@group.id) %>
 <% end %>
+
+<div class="field">
+	<%= form_tag("/addplace", method: "post") do %>
+		<%= hidden_field_tag :group_id, @group.id %>
+		<%= select_tag "place", options_from_collection_for_select(Place.all, "id", "name") %>
+  	<%= submit_tag("Add Place to Group") %>
+	<% end %>
+</div>
 
 

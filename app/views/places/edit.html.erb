@@ -1,0 +1,22 @@
+<h1> edit the place </h1>
+
+<%= form_for [@place] do |p| %>
+	<%= p.label :name %>
+	<%= p.text_field :name %>
+	<br>
+	<%= p.label :kind %>
+	<%= p.text_field :kind %>
+	</br>
+	<%= p.label :location %>
+	<%= p.text_field :location %>
+	<br>
+	<%= p.label :url %>
+	<%= p.text_field :url %>
+	<br>
+
+
+	<%= p.submit 'save' %>
+	<%= link_to 'cancel', place_path(@place) %></br>
+
+	<%= link_to "show all places", places_path %>
+<% end %>

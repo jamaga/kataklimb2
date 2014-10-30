@@ -1,0 +1,16 @@
+<h1> create a place </h1>
+
+<%= form_for @place do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :kind %>
+	<%= f.text_field :kind %>
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	
+	<%= f.submit "create a place" %></br>
+
+	<%= link_to "show all places", places_path %>
+<% end -%>

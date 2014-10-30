@@ -1,6 +1,13 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ body {
+ 	font-family: sans-serif;
+}
+a {
+	text-decoration: none;
+	color: darkgreen;
+}
 body {
 	margin: 0px;
 	background-color: cornsilk;
@@ -22,7 +29,7 @@ header{
 header nav ul{
 	margin:0 auto;
 	height: 40px;
-	width: 70%;
+	width: 90%;
 	font-family: sans-serif;
 
 }

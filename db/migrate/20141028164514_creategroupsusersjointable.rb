@@ -6,3 +6,4 @@ class Creategroupsusersjointable < ActiveRecord::Migration
   	 end
   end
 end
+ 
