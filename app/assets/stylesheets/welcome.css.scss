@@ -22,7 +22,7 @@ header{
 header nav ul{
 	margin:0 auto;
 	height: 40px;
-	width: 50%;
+	width: 70%;
 	font-family: sans-serif;
 
 }
@@ -30,7 +30,7 @@ header nav li {
 	display: inline-block;
 	margin: 0px;
 	float: left;
-	height: 30px;
+	height: 21px;
 	width: 150px;
 	border-radius: 10px;
 	background-color: lightgoldenrodyellow;
@@ -53,6 +53,17 @@ header ul li {
 	border-radius: 10px;
 	text-align: center;
 	padding:2px 0 0;
+}
+
+header a {
+	text-decoration: none;
+	text-shadow: 0 0 2px #999;
+	a:hover span { cursor: pointer }
+	a:hover { text-decoration:none;
+text-shadow: 0 0 3px #999;
+ 	a:visited { color: lightsteelblue }
+}
+
 }
 
 
