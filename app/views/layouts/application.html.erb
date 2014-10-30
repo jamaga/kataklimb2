@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kataklimb2</title>
+  <title>puja el peu</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,15 +12,19 @@
 	    <%= content_tag(:div, value, :class => "flash #{key}") %>
 	  <% end %>
 		<header>
-			<h1> KataKlimb - page to connect people who want to climb in Barcelona and around it  </h1>
+			<h1> puja el peu - page to connect people who want to climb in Barcelona and around it  </h1>
 			<nav>
 				<ul>
 					<li> <%= link_to 'Go Home ET', root_path %> </li>
 					<% if current_user %>
 						<li><%= link_to 'log out here', logout_path, method: :destroy %></li>
+						<li><%= link_to 'your profile', user_path(current_user) %></li>
 					<% else %>
 						<li><%= link_to 'login here', login_path %></li>
+
 					<% end %>
+					<li> <%= link_to 'Grups list', groups_path %> </li>
+
 				</ul>
 			</nav>
 		</header>

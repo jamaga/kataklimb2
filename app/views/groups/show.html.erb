@@ -9,19 +9,20 @@
 </ul>
 
 
-
 <dl class="dl-horizontal">
 	<%= button_to "Delete this group", group_path(@group), method: :delete %> 
 </dl>
 
-<%= link_to "Update this group", edit_group_path(@group.id)%>  </br>
+<% if current_user && @group.users.include?(current_user) %>
+	<%= link_to "Update this group", edit_group_path(@group.id)%>  </br>
+<% end %>
 
 
-<% if current_user %>
+<%# if @group.users.include?(current_user)g.users.include?(u) %>
+
+
+<% if current_user && !@group.users.include?(current_user) %>
 	<%= link_to 'join', join_path(@group.id) %>
-<% else %>
- <% link_to 'log in to join the group', login_path %>
- <% end %>
+<% end %>
 
-  
 
