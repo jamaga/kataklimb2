@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031160337) do
+ActiveRecord::Schema.define(version: 20141031165643) do
 
 # Could not dump table "groups" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20141031160337) do
     t.string   "climbing_level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "userpic_file_name"
+    t.string   "userpic_content_type"
+    t.integer  "userpic_file_size"
+    t.datetime "userpic_updated_at"
   end
 
 end
