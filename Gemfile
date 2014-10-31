@@ -31,7 +31,9 @@ gem 'bcrypt','~> 3.1.7'
 
 gem 'faker'
 
-gem 'carrierwave'
+gem 'paperclip'
+
+gem 'bootstrap-sass'
 
 # Use unicorn as the app server
 # gem 'unicorn'

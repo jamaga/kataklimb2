@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+	before_filter :get_place, only: [:show, :edit, :update]
 
 	def index
 		@places = Place.all
@@ -9,29 +10,24 @@ class PlacesController < ApplicationController
 	end
 
 	def create
-		@place = Place.create(name: params[:place][:name], kind: params[:place][:kind], location: params[:place][:location], url: params[:place][:url])
-		redirect_to places_path
+		@place = Place.new(place_params)
+		if @place.save
+			redirect_to places_path
+		else
+			render :new
+		end
 	end
-
-	def show
-    @place = Place.find(params[:id])
-  end
 
   def destroy
    	place = Place.find(params[:id]).destroy
     redirect_to places_path
   end
 
-  def edit
-		@place = Place.find(params[:id])
-	end
-
 	def update
-		@place = Place.find(params[:id])
 		puts '='*100
 		puts params.inspect
 		puts '='*100
-		@place.update_attributes(name: params[:place][:name], kind: params[:place][:kind], location: params[:place][:location], url: params[:place][:url])
+		@place.update_attributes(place_params)
 		redirect_to place_path(@place)
 	end
 
@@ -47,4 +43,12 @@ class PlacesController < ApplicationController
 		redirect_to places_path, notice: "you have chose place for group"
 	end
 
+	private
+	def get_place
+		@place = Place.find(params[:id])
+	end
+
+	def place_params
+		params.require(:place).permit(:name, :kind, :location, :placeimage, :url)
+	end
 end

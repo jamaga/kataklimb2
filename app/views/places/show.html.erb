@@ -1,6 +1,7 @@
 <h1><%= @place.name %></h1>
 <h3><%= 'information about' +' ' + @place.name + ':' %>
-<p><%= @place.kind + ', ' + @place.location + ', ' + @place.url %>
+<p><%= @place.kind + ', ' + @place.location + ', '  %> 
+<%= image_tag (@place.placeimage.url) %>
 
 <h3>Groups that go to that place:</h3>
 <% @place.groups.each do |group| %>

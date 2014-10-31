@@ -74,11 +74,11 @@ header a {
 	text-decoration: none;
 	//text-shadow: 0 0 2px #999;
 	//a:hover span { cursor: pointer }
-	a:hover {text-shadow: 0 0 3px #999;
- 	a:visited { color: lightsteelblue }
-}
 
 }
+
+header 	a:hover {text-shadow: 0 0 3px #999;}
+header a:visited { color: lightsteelblue }
 
 
 header {

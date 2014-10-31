@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030161519) do
+ActiveRecord::Schema.define(version: 20141031160337) do
 
 # Could not dump table "groups" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 20141030161519) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "placeimage_file_name"
+    t.string   "placeimage_content_type"
+    t.integer  "placeimage_file_size"
+    t.datetime "placeimage_updated_at"
   end
 
   create_table "users", force: true do |t|
