@@ -8,30 +8,13 @@
   </ul>
 <% end %>
 
-<%= form_for @user, url: register_path do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="form-group">
-    <%= f.label :climbing_level %>
-    <%= f.text_field :climbing_level %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-
-  </div>
-  <%= f.label :userpic %>
-  <%= f.file_field :userpic %>
+<%= simple_form_for @user, url: register_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
+  <%= f.input :userpic %>
   </br>
-  <%= f.submit %>
+  <%= f.button :submit, class: 'btn-primary' %>
 <% end %>

@@ -35,6 +35,8 @@ gem 'paperclip'
 
 gem 'bootstrap-sass'
 
+gem 'simple_form'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

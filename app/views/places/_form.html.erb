@@ -1,15 +1,10 @@
-<%= form_for @place do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :kind %>
-	<%= f.text_field :kind %>
-	<%= f.label :location %>
-	<%= f.text_field :location %>
-	<%= f.label :url %>
-	<%= f.text_field :url %>
-	<%= f.label :placeimage %>
-	<%= f.file_field :placeimage %>
-	<%= f.submit "create a place" %></br>
+<%= simple_form_for @place do |f| %>
+	<%= f.input :name %>
+	<%= f.input :kind %>
+	<%= f.input :location %>
+	<%= f.input :placeimage %>
+
+	<%= f.button :submit, "create a place" %></br>
 
 <% end -%>
 

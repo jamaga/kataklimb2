@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post "logout", to: "login#destroy"
 
   post '/addplace', to: 'places#addplace'
+  post '/addclimbinglevel', to: 'users#addclimbinglevel'
 
 
   
