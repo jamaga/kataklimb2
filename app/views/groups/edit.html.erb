@@ -1,9 +1,11 @@
 <h1> edit the group </h1>
 
-<%= form_for [@group] do |p| %>
+<%= simple_form_for [@group] do |p| %>
 	<%= p.label :name %>
 	<%= p.text_field :name %>
 	<br>
+	<%= f.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
+	</br>
 
 	<%= p.submit 'save' %>
 	<%= link_to 'cancel', group_path(@group) %>

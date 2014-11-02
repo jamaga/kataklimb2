@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-		@group = Group.create(name: params[:group][:name])
+		@group = Group.create(name: params[:group][:name], climbing_level: params[:group][:climbing_level])
 		redirect_to groups_path
 		@group.users << current_user
 	end
@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
 
 	def update
 		@group = Group.find(params[:id])
-		@group.update(name: params[:group][:name])
+		@group.update(name: params[:group][:name], climbing_level: params[:group][:climbing_level])
 		redirect_to group_path(@group)
 	end
 

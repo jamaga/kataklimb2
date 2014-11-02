@@ -1,6 +1,8 @@
 <h1> create a group </h1>
 
-<%= form_for @group do |f| %>
+
+<%= simple_form_for @group do |f| %>
 	<%= f.text_field :name %>
+	<%= f.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
 	<%= f.submit "create a group" %>
 <% end -%>
