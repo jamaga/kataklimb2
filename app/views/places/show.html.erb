@@ -8,6 +8,12 @@
 	<%= group.name %>
 <% end %>
 
+<h4>geolocation details: </h4>
+<p><%= @place.location %><p>
+<p><%= @place.latitude %><p>
+<p><%= @place.longitude %><p>
+
+
 
 <dl class="dl-horizontal">
 	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
