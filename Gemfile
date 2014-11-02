@@ -35,8 +35,9 @@ gem 'paperclip'
 
 gem 'bootstrap-sass'
 
+gem 'geocoder'
 gem 'simple_form'
-
+#gem 'jquery-raty-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
