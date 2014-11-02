@@ -1,6 +1,5 @@
 class RatingsController < ApplicationController
 
-
 	def new
 		@place = Place.find(params[:place_id])
   	@rating = Rating.new
@@ -8,8 +7,10 @@ class RatingsController < ApplicationController
 
  def create
  	@rating = Rating.new(rating_params)
+ 	place = Place.find(params[:place_id]) 
+ 	place.ratings << @rating
   	if @rating.save
-      redirect_to place_path(@place.id)
+      redirect_to place_path(@rating.place.id)
    	else
      render :new
     end
@@ -18,7 +19,7 @@ class RatingsController < ApplicationController
  #private
 
  def rating_params
-  params.require(:score).permit(:score) 
+  params.require(:rating).permit(:score) 
  end
 
 end

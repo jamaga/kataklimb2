@@ -17,6 +17,7 @@
 <div id="star"></div>
 
 <p>Your rating</p>
+<h4><%= 'the average rating ' + @place.average_rating.to_s %>
 <div id="user_star"></div>
 
 	<%= link_to "rate this place", new_place_rating_path(@place.id)%>  </br>
