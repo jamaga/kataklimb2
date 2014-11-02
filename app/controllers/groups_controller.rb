@@ -33,10 +33,20 @@ class GroupsController < ApplicationController
 		redirect_to group_path(@group)
 	end
 
+	# def join
+ #  	@group = Group.find(params[:group_id])
+ #  	@group.users << current_user
+ #  	redirect_to groups_path, notice: "You joined the group!!"
+	# end
+
 	def join
   	@group = Group.find(params[:group_id])
-  	@group.users << current_user
+  	if current_user.climbing_level == @group.climbing_level
+  		@group.users << current_user
   	redirect_to groups_path, notice: "You joined the group!!"
+  	else
+  		redirect_to groups_path, notice: "you need to have adequate climbing level!"
+		end
 	end
 
 end

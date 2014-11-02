@@ -1,6 +1,6 @@
 <h1> edit this user </h1>
 
-<%= form_for [@user] do |p| %>
+<%= simple_form_for [@user] do |p| %>
 	<%= p.label :name %>
 	<%= p.text_field :name %>
 
@@ -10,8 +10,7 @@
 	<%= p.label :password %>
 	<%= p.password_field :password %>
 
-	<%= p.label :climbing_level %>
-	<%= p.text_field :climbing_level %>
+	<%= p.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
 
 	<%= p.label :userpic %>
 	<%= p.file_field :userpic %>
