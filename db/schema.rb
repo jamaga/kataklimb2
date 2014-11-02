@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102160335) do
+ActiveRecord::Schema.define(version: 20141102185902) do
 
 # Could not dump table "groups" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 20141102160335) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "place_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["place_id"], name: "index_ratings_on_place_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

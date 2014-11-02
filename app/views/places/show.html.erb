@@ -13,7 +13,13 @@
 <p id='lat'><%= @place.latitude %><p>
 <p id='long'><%= @place.longitude %><p>
 
+<p>Average rating</p>
+<div id="star"></div>
 
+<p>Your rating</p>
+<div id="user_star"></div>
+
+	<%= link_to "rate this place", new_place_rating_path(@place.id)%>  </br>
 
 <dl class="dl-horizontal">
 	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
@@ -41,3 +47,9 @@
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+
+
+
+
+
+

@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :groups
-  resources :places
-
+  resources :places do
+    resources :ratings
+  end
   get '/join/:group_id', to: 'groups#join', as: :join
 
   get '/login', to: "login#new"

@@ -3,11 +3,7 @@
 one:
   place_id: 
   score: 1
-  default: MyString
-  0: MyString
 
 two:
   place_id: 
   score: 1
-  default: MyString
-  0: MyString
