@@ -5,9 +5,9 @@ class LoginController < ApplicationController
 	end
 
   def create
-    user = User.where(email: params[:email]).first
-
-    if user && user.authenticate(params[:password])
+    user = User.find_by_email(params[:user][:email])
+    p user
+    if user && user.authenticate(params[:user][:password])
       flash[:success] = "Login sucessful! Welcome #{user.name}!"
       session[:current_user_id] = user.id
       redirect_to user_path(user.id)
@@ -23,4 +23,3 @@ class LoginController < ApplicationController
     redirect_to root_url
   end
 end
-

@@ -16,7 +16,7 @@ class RegistrationsController < ApplicationController
     render :new
  end
 
- private
+ #private
 
  def user_params
   params.require(:user).permit(:name, :email, :password, :password_confirmation, :userpic, :climbing_level)

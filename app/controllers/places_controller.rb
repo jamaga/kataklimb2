@@ -43,7 +43,7 @@ class PlacesController < ApplicationController
 		redirect_to places_path, notice: "you have chose place for group"
 	end
 
-	private
+	#private
 	def get_place
 		@place = Place.find(params[:id])
 	end
