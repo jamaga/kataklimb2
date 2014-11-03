@@ -18,11 +18,7 @@
 
 <p>Your rating</p>
 <h4><%= 'the average rating ' + @place.average_rating.to_s %>
-
-<% @place.average_rating.times do %>
-	<span class="user_star"></span><span class='space'></span>
-	<% end %>
-
+</h4>
 
 	<%= link_to "rate this place", new_place_rating_path(@place.id)%>  </br>
 
@@ -34,7 +30,16 @@
 
 	<%= link_to "show all places", places_path %></p></br>
 
+<div class="starsdiv">
+<% @place.average_rating.times do %>
+	<span class="user_star"></span><span class='space'></span>
+	<% end %>
+</div>
+</br>
+
 <div id="map-canvas"></div>
+
+
 
 <script>
 	var map;
