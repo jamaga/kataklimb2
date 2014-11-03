@@ -17,10 +17,11 @@
 <div id="star"></div>
 
 <p>Your rating</p>
-<h4><%= 'the average rating ' + @place.average_rating.to_s %>
+<h4><%= 'the average rating: ' + @place.average_rating.to_s %>
 </h4>
+</br>
 
-	<%= link_to "rate this place", new_place_rating_path(@place.id)%>  </br>
+	<p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>  </br>
 
 <dl class="dl-horizontal">
 	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
@@ -31,9 +32,11 @@
 	<%= link_to "show all places", places_path %></p></br>
 
 <div class="starsdiv">
+<% if @place.ratings.all.any? %>
 <% @place.average_rating.times do %>
 	<span class="user_star"></span><span class='space'></span>
 	<% end %>
+<% end -%>
 </div>
 </br>
 

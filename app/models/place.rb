@@ -10,11 +10,15 @@ class Place < ActiveRecord::Base
  	after_validation :geocode 
 
  	def average_rating
+ 		if ratings.any?
  		sum = 0
 		self.ratings.each do |rating|
 			sum += rating.score 
 		end
 		sum / ratings.count
+		else
+			return 'the place has not been rated yet'
+		end
 	end
 end
 
