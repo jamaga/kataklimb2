@@ -13,9 +13,9 @@ User.create(name: Faker::Name.name, email: 'b@b.test', password: '123')
 User.create(name: Faker::Name.name, email: 'c@c.test', password: '123')
 
 
-3.times do
-	Group.create(name: Faker::Name.name)
-end
+# 3.times do
+# 	Group.create(name: Faker::Name.name)
+# end
 
 # 3.times do
 # 	Place.create(name: Faker::Name.name)

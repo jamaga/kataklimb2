@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :groups
+
+  resources :groups do
+    resources :comments
+  end
+
   resources :places do
     resources :ratings
   end

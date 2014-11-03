@@ -1,0 +1,14 @@
+<h1> edit yor comment </h1>
+
+<%= form_for [@comment] do |p| %>
+	<%= p.label :title %>
+	<%= p.text_field :title %>
+	<br>
+
+	<%= p.label :content %> <br>
+	<%= p.text_area :content %>
+	<br>
+
+	<%= p.submit 'save' %>
+	<%= link_to 'cancel', comment_path(@comment) %>
+<% end %>

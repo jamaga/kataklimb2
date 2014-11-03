@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102185902) do
+ActiveRecord::Schema.define(version: 20141103143444) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["group_id"], name: "index_comments_on_group_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
 # Could not dump table "groups" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
