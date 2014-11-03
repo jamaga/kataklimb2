@@ -20,8 +20,9 @@
 <h4><%= 'the average rating ' + @place.average_rating.to_s %>
 
 <% @place.average_rating.times do %>
-	<span class="user_star"></span>
-<% end %>
+	<span class="user_star"></span><span class='space'></span>
+	<% end %>
+
 
 	<%= link_to "rate this place", new_place_rating_path(@place.id)%>  </br>
 
