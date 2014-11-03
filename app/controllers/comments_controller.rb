@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+	before_filter :authenticate, except: [:index, :show]
+
 	def index
 		@comments = Comment.all
 	end
@@ -25,7 +27,6 @@ class CommentsController < ApplicationController
 		end
 	end
 
-
 	def destroy
 		comment = Comment.find(params[:id]).destroy
 		group.comments.each do |comment|
@@ -37,7 +38,9 @@ class CommentsController < ApplicationController
 	def create
 		@comment = Comment.create(comment_params)
 		group = Group.find(params[:group_id])
+		
 		group.comments << @comment
+		current_user.comments << @comment
 			@comment.save
 			redirect_to group_path(@comment.group.id)
 	end

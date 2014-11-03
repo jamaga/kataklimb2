@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
 	before_filter :get_place, only: [:show, :edit, :update]
+	before_filter :authenticate, except: [:index, :show]
 
 	def index
 		@places = Place.all

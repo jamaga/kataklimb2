@@ -7,6 +7,8 @@ class RegistrationsController < ApplicationController
  def create
  	@user = User.new(user_params)
   	if @user.save
+      flash[:success] = "Login sucessful! Welcome #{@user.name}!"
+      session[:current_user_id] = @user.id      
       redirect_to user_path(@user.id)
    	else
      render :new
