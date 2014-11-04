@@ -12,3 +12,13 @@
  	<li><%= link_to group.name, group_path(group)%></li>
  <% end %>
  </ul>
+
+
+  <h3> see users by given climbing level </h3>
+  <% @groups.each do |group| %>
+	  <% group.users.each do |user|  %>
+			<% user.climbing_level %>
+			<li><%= link_to  (user.climbing_level + ' ' + user.name), user_path(user.id) %></li>
+
+	  <% end -%>
+  <% end -%>
