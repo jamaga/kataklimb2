@@ -1,12 +1,5 @@
 <h3> list of all the groups available: </h3>
 
-	<ul>
- <% @groups.each do |group| %>
- 	<li><%= link_to (group.name + ' ' + group.climbing_level), group_path(group)%></li>
- <% end %>
- </ul>
-
-
 <table class="table">
     <thead>
         <tr>
@@ -20,13 +13,13 @@
      <% @groups.each do |group| %>
 	     <tr>
 	     	<td>
-	     		<%= group.name %>
+	     		<%= group.capacity %>
 	     	</td>
 	     	 <td>
-	     		<%= group.name %>
+	     		<%= group.users.count %>
 	     	</td>
 	     		<td>
-	     		<%= group.name %>
+	     	<%= link_to group.name, group_path(group) %>
 	     	<td>
 	     		<%= group.climbing_level %>
 	     	</td>

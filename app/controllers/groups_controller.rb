@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
 		@group = Group.create(
 			name: params[:group][:name], 
 			climbing_level: params[:group][:climbing_level], 
+			capacity: params[:group][:capacity],
 			creator_id: current_user.id
 		)
 		redirect_to groups_path
@@ -33,7 +34,9 @@ class GroupsController < ApplicationController
 	end
 
 	def update
-		@group.update(name: params[:group][:name], climbing_level: params[:group][:climbing_level])
+		@group.update(name: params[:group][:name],
+		 climbing_level: params[:group][:climbing_level],
+		 capacity: params[:group][:capacity])
 		redirect_to group_path(@group)
 	end
 
