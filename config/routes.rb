@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/login', to: "login#new"
   post   "/login",  to: "login#create"
-  delete "/logout", to: "login#destroy"
+  delete "logout", to: "login#destroy"
 
   get  "/register", to: "registrations#new"
   post "/register", to: "registrations#create"

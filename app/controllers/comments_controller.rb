@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
 	end
 
 	def show
-		@comment = Comment.find(params[:id])
+		@comment = Comment.find(params[:id]) 
+		@user = current_user
 	end
 
 	def new
@@ -28,25 +29,24 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		group = Group.find(params[:group_id])
 		comment = Comment.find(params[:id]).destroy
-		group.comments.each do |comment|
-			comment.destroy
-		end
-		redirect_to group_path(@group)
+		redirect_to group_path(group.id)
 	end
 	
 	def create
 		@comment = Comment.create(comment_params)
 		group = Group.find(params[:group_id])
-		
+		puts '='*100
+		puts @comment
+		puts '='*100
 		group.comments << @comment
 		current_user.comments << @comment
-			@comment.save
-			redirect_to group_path(@comment.group.id)
+		redirect_to group_path(@comment.group.id)
 	end
 
 	private
 		def comment_params
-			params.require(:comment).permit(:title, :content, :id)
+			params.require(:comment).permit(:title, :content)
 		end
 end
