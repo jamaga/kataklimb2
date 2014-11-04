@@ -1,4 +1,4 @@
-<h1><%= @group.name %></h1>
+<h3><%= @group.name %></h3>
 
 <h4><%= 'required climbing level to join: ' + @group.climbing_level %>
 
@@ -37,8 +37,7 @@
 <%= link_to 'make a comment', new_group_comment_path(@group.id) %>
 
 <% @group.comments.each do |comment| %>
-	<%= comment.content  %>
-	<%= link_to 'indiv comment page', group_comment_path(@group.id, comment.id) %>
+	<%= link_to comment.title, group_comment_path(@group.id, comment.id) %>
 <% end -%>
 
 

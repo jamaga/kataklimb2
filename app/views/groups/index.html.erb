@@ -1,11 +1,4 @@
-<h1> list of all the groups available: </h1>
-
-  <h3>groups available</h3>
-  <% if current_user %>
-		<%= link_to 'create new group', new_group_path%>
-	<% else %>
-	 <p><%= 'register to create groups!' %></p>
-	 <%end %>
+<h3> list of all the groups available: </h3>
 
 	<ul>
  <% @groups.each do |group| %>
@@ -13,8 +6,14 @@
  <% end %>
  </ul>
 
+   <% if current_user %>
+		<%= link_to 'create new group', new_group_path%>
+	<% else %>
+	 <p><%= 'register to create groups!' %></p>
+	 <%end %>
 
-  <h3> see users by given climbing level </h3>
+
+  <h3> checkout the users by their climbing level: </h3>
   <% @groups.each do |group| %>
 	  <% group.users.each do |user|  %>
 			<% user.climbing_level %>
