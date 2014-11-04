@@ -6,6 +6,39 @@
  <% end %>
  </ul>
 
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Capacity</th>
+            <th>No. of Members</th>
+            <th>Name</th>
+            <th>Climbing Level</th>
+            <th>Created by</th>
+        </tr>
+    </thead>
+     <% @groups.each do |group| %>
+	     <tr>
+	     	<td>
+	     		<%= group.name %>
+	     	</td>
+	     	 <td>
+	     		<%= group.name %>
+	     	</td>
+	     		<td>
+	     		<%= group.name %>
+	     	<td>
+	     		<%= group.climbing_level %>
+	     	</td>
+	     	 <td>
+	     		<%= group.creator.name %>
+	     	</td>
+	     </tr>
+		<% end %>
+</table>
+
+
+
    <% if current_user %>
 		<%= link_to 'create new group', new_group_path%>
 	<% else %>

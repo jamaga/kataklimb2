@@ -1,27 +1,20 @@
-<h1><%= @place.name %></h1>
-<h3><%= 'information about' +' ' + @place.name + ':' %>
+<h2><%= @place.name %></h2>
+<h3><%= 'information about' +' ' + @place.name + ':' %></h3>
 <p><%= @place.kind + ', ' + @place.location + ', '  %> 
-<%= image_tag (@place.placeimage.url), :class => "style_placeimage" %>
+<%= image_tag (@place.placeimage.url), :class => "style_placeimage" %></p>
+
+<p> latitude and longitude: </p>
+<p id='lat'><%= @place.latitude %><p>
+<p id='long'><%= @place.longitude %><p>
 
 <h3>Groups that go to that place:</h3>
 <% @place.groups.each do |group| %>
 	<li><%= link_to group.name, group_path(group)%></li>
 <% end %>
 
-<h4>geolocation details: </h4>
-<p><%= @place.location %><p>
-<p id='lat'><%= @place.latitude %><p>
-<p id='long'><%= @place.longitude %><p>
 
-<p>Average rating</p>
-<div id="star"></div>
 
-<p>Your rating</p>
-<h4><%= 'the average rating: ' + @place.average_rating.to_s %>
-</h4>
-</br>
-
-	<p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>  </br>
+<p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>  </br>
 
 <dl class="dl-horizontal">
 	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
