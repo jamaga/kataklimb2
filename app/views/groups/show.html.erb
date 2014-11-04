@@ -1,3 +1,4 @@
+<div class="group_show">
 <h3><%= @group.name %></h3>
 
 <h4><%= 'required climbing level to join: ' + @group.climbing_level %>
@@ -39,7 +40,7 @@
 <% @group.comments.each do |comment| %>
 	<%= link_to comment.title, group_comment_path(@group.id, comment.id) %>
 <% end -%>
-
+</div>
 
 
 
