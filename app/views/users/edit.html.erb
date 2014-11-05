@@ -1,3 +1,4 @@
+<div class="user_edit">
 <h2> edit this user </h2>
 
 <%= simple_form_for [@user] do |p| %>
@@ -21,4 +22,4 @@
 	<%= p.submit 'save' %>
 	<%= link_to 'cancel', user_path(@user) %>
 <% end %>
-
+</div>

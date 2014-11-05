@@ -1,3 +1,4 @@
+<div class="user_show">
 <h2><%=  @user.name %></h2>
 
 <%= image_tag (@user.userpic.url), :class => "style_profilepic" %>
@@ -18,3 +19,4 @@
 <%= button_to "Delete this user", user_path(@user), method: :delete %> </dl>
 
 <%= link_to "Update this user", edit_user_path(@user.id)%>
+</div>
