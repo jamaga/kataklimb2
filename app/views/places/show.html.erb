@@ -25,6 +25,7 @@
 
 	<%= link_to "show all places", places_path %></p></br>
 
+<h4> Rating of the place: </h4>
 <div class="starsdiv">
 <% if @place.ratings.all.any? %>
 <% @place.average_rating.times do %>
