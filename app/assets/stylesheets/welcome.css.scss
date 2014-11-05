@@ -18,6 +18,11 @@ a {
 	text-decoration: none;
 }
 
+body a:hover {
+text-shadow: 0 0 5px #999;
+text-decoration: none;
+}
+
  // body::after {
 	
 	//  content: "";
@@ -37,7 +42,7 @@ a {
 
 body a {
 	text-decoration: none;
-	color: darkgreen;
+	color: darkslategray;
 }
 
 div.container{
@@ -55,7 +60,7 @@ div.yield{
 }
 header{
 	outline:solid 4px solid;
-	border-radius: 8px;
+	border-radius: 2px;
 	text-decoration: none;
 }
 
@@ -74,7 +79,7 @@ header nav li {
 	//float: left;
 	height: 21px;
 	width: 140px;
-	border-radius: 10px;
+	border-radius: 3px;
 	background-color: whitesmoke;
 }
 
@@ -96,7 +101,7 @@ header ul li {
 	
 	margin-right: 10px;
 	margin-top: 5px;
-	border-radius: 10px;
+	border-radius: 3px;
 	text-align: center;
 	padding:2px 0 0;
 	text-decoration: none;
@@ -167,7 +172,7 @@ section.middle a {
 	/*height: 30px;*/
 	width: 200px;
 	background-color: ivory;
-	border-radius: 10px;
+	border-radius: 3px;
 
 }
 
@@ -193,8 +198,8 @@ line-height: 20px;
 }
 
 .style_profilepic {
-	height: 200px;
-	width: 170px;
+	height: 230px;
+	width: 210px;
 }
 
 .style_placeimage {
@@ -203,6 +208,6 @@ line-height: 20px;
 }
 
 .flash {
-	color: yellow;
+	color: white;
 	font-size: 30px;
 }

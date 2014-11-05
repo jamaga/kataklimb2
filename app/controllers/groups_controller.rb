@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
 			creator_id: current_user.id
 		)
 		redirect_to groups_path
-		@group.users << current_user
+		#@group.users << current_user
 	end
 
 	def show

@@ -12,15 +12,15 @@ class RatingsController < ApplicationController
   	if @rating.save
       redirect_to place_path(@rating.place.id)
    	else
-     render :new
+     	redirect_to place_path(place.id), notice: 'you have already rated this place' 
     end
  end
 
- #private
+ private
 
- def rating_params
-  params.require(:rating).permit(:score) 
- end
+	 def rating_params
+	  	params.require(:rating).permit(:score, :user_id) 
+	 end
 
 end
 

@@ -35,6 +35,8 @@
 <% end -%>
 </div>
 </br>
+
+<!-- @place.ratings  -->
 <p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>  </br>
 
 <div id="map-canvas"></div>
@@ -48,7 +50,7 @@
 		var longitude = $('#long').text();
 		function initialize() {
 			var mapOptions = {
-				zoom: 14,
+				zoom: 15,
 				center: new google.maps.LatLng(latitude, longitude)
 			};
 			map = new google.maps.Map(document.getElementById('map-canvas'),
