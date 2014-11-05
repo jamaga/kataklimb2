@@ -7,6 +7,10 @@
 <p><%= @comment.content %></p>
 
 
+<% if @comment.user == current_user %>
 <%= link_to 'Delete Comment', group_comment_path(@comment.group.id, @comment.id), method: :delete %>
+<% else %>
+	<p><%= 'you can only delete your own comments' %></p>
+<% end -%>
 <div class="group_edit">
 </div>
