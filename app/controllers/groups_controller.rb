@@ -69,6 +69,12 @@ class GroupsController < ApplicationController
   		end
   	end
 
+  	def leave
+  		@group = Group.find(params[:group_id])
+  		@group.users.delete(current_user)
+  		redirect_to groups_path, notice: 'you have succesfully left group'
+  	end
+
 	private
 
   def authorize
