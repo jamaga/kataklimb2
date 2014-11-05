@@ -46,15 +46,39 @@ class GroupsController < ApplicationController
  #  	redirect_to groups_path, notice: "You joined the group!!"
 	# end
 
-	def join
+	# def join
+ #  	@group = Group.find(params[:group_id])
+ #  	if current_user.climbing_level == @group.climbing_level &&
+ #  		(@group.capacity - @group.users.count > 0)
+ #  		@group.users << current_user
+ #  	redirect_to groups_path, notice: "You joined the group!!"
+ #  	else
+ #  		redirect_to groups_path, notice: "you need to have adequate climbing level!"
+	# 	end
+	# end
+
+		def join
   	@group = Group.find(params[:group_id])
-  	if current_user.climbing_level == @group.climbing_level
-  		@group.users << current_user
-  	redirect_to groups_path, notice: "You joined the group!!"
-  	else
-  		redirect_to groups_path, notice: "you need to have adequate climbing level!"
-		end
-	end
+  		if current_user.climbing_level != @group.climbing_level
+  			redirect_to groups_path, notice: "you need to have adequate climbing level!"
+  		elsif (@group.capacity - @group.users.count <= 0)
+  			redirect_to groups_path, notice: "this group is full, you can create another one!"
+  		else
+  			@group.users << current_user
+  			redirect_to group_path(@group), notice: "You joined the group!"
+  		end
+  	end
+
+
+ #  	if current_user.climbing_level == @group.climbing_level &&
+ #  		(@group.capacity - @group.users.count > 0)
+ #  		@group.users << current_user
+ #  	redirect_to groups_path, notice: "You joined the group!!"
+ #  	else
+ #  		redirect_to groups_path, notice: "you need to have adequate climbing level!"
+	# 	end
+	# end
+
 
 	private
 
