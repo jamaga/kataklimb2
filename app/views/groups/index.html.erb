@@ -40,12 +40,31 @@
 	 <%end %>
 
 
-  <h3> checkout the users by their climbing level: </h3>
-  <% @groups.each do |group| %>
-	  <% group.users.each do |user|  %>
-			<% user.climbing_level %>
-			<li><%= link_to  (user.climbing_level + ' ' + user.name), user_path(user.id) %></li>
+<h3> checkout the users by their climbing level </h3>
+<table class="table_groups2">
+    <thead>
+        <tr>
+        <th>Level</th>
+        <br>
+        <th>User</th>
+        </tr>
+    </thead>
+    	<% @groups.each do |group| %>
+    		<% group.users.each do |user|  %>
+    		<% user.climbing_level %>
+    			<tr>
+	     			<td>
+	     				<%= user.climbing_level %>
+	     			</td>
+	     			<td>
+	     				<%= link_to user.name, user_path(user.id) %>
+	     			</td>
+	     		</tr>
+	     	<% end -%>
+	    <% end -%>
+</table>
 
-	  <% end -%>
-  <% end -%>
+
+
+
 </div>
