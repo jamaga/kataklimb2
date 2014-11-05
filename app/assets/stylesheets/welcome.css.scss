@@ -60,18 +60,20 @@ header{
 }
 
 header nav ul{
-	margin:0 auto;
+
 	height: 40px;
-	width: 90%;
+	width: 80%;
 		font-family: 'Nunito', sans-serif;
+		margin-left: 100px;
+		//outline: 1px solid red;
 
 }
 header nav li {
 	display: inline-block;
-	margin: 0px;
-	float: left;
+	//margin: 0px;
+	//float: left;
 	height: 21px;
-	width: 150px;
+	width: 140px;
 	border-radius: 10px;
 	background-color: whitesmoke;
 }
@@ -79,18 +81,15 @@ header nav li {
 header h1 {
 	position: relative;
 	top:10px;
-	left:50px; 
+	 	text-align: center;
 	font-size: 20px;
-	/*margin-bottom: 5px;*/
-	color: ivory;
+	margin-bottom: 5px;
+	color: white;
 	text-decoration: none;
-	background-color: tomato;
+	//background-color: tomato;
 
 
 }
-
-
-
 
 
 header ul li {
@@ -194,8 +193,8 @@ line-height: 20px;
 }
 
 .style_profilepic {
-	height: 180px;
-	width: 150px;
+	height: 200px;
+	width: 170px;
 }
 
 .style_placeimage {

@@ -39,8 +39,9 @@
 
 
 <br><h4> Coments made by users: </h4>
+<ul>
 <% @group.comments.each do |comment| %>
-	<%= link_to comment.title, group_comment_path(@group.id, comment.id) %>
+<li><%= link_to comment.title, group_comment_path(@group.id, comment.id) %></li>
 <% end -%>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="places_show">
 <h2><%= @place.name %></h2>
-<h3><%= 'information about' +' ' + @place.name + ':' %></h3>
+<h3><%= 'about' +' ' + @place.name + ':' %></h3>
 <p><%= @place.kind + ', ' + @place.location + ', '  %> 
 <%= image_tag (@place.placeimage.url), :class => "style_placeimage" %></p>
 
@@ -8,14 +8,15 @@
 <p id='lat'><%= @place.latitude %><p>
 <p id='long'><%= @place.longitude %><p>
 
-<h3>Groups that go to that place:</h3>
+<h3>Groups that go here:</h3>
 <% @place.groups.each do |group| %>
 	<li><%= link_to group.name, group_path(group)%></li>
 <% end %>
+<br>
 
 
 
-<p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>  </br>
+
 
 <dl class="dl-horizontal">
 	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
@@ -23,7 +24,7 @@
 
 	<%= link_to "Update this place", edit_place_path(@place.id)%>  </br>
 
-	<%= link_to "show all places", places_path %></p></br>
+	<%= link_to "Show all places", places_path %></p></br>
 
 <h4> Rating of the place: </h4>
 <div class="starsdiv">
@@ -34,6 +35,7 @@
 <% end -%>
 </div>
 </br>
+<p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>  </br>
 
 <div id="map-canvas"></div>
 
