@@ -2,21 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
  body {
-	 background: url(1a.jpg) no-repeat center center fixed; 
+ 	margin: 0px;
+ 	font-family: 'Nunito', sans-serif;
+ 	color: #002635;
+ 	position: relative;
+ 	  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+ body::after {
+	 background: url(1a.jpg) no-repeat center center fixed;
+	 content: "";
+	 opacity: 0.80;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 right: 0;
+	 position: absolute;
+	 z-index: -1;  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
  }
 
-
-
- body {
- 		margin: 0px;
- 	font-family: 'Nunito', sans-serif;
- 	color: #002635;
-
-}
 body a {
 	text-decoration: none;
 	color: darkgreen;
