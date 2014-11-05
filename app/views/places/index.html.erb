@@ -1,5 +1,34 @@
 <div class="table_places">
-<h2> list of all places: </h2>
+<h3> list of all places: </h3>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+        <th>Sector</th>
+        <th>Loctation</th>
+       
+        <th>Type of rock</th>
+        </tr>
+      
+    </thead>
+    	<% @places.each do |place| %>
+    		<% place.name %>
+    			<tr>
+    				<td>
+	     				<%= link_to place.name, place_path(place) %>
+	     			</td>
+	     			<td>
+	     				<%= place.location %>
+	     			</td>
+	     			<td>
+	     				<%= place.kind %>
+	     			</td>
+	     		</tr>
+	     	<% end -%>
+</table>
+<br>
 
 
 <% if current_user %>
@@ -8,9 +37,4 @@
 <p><%= 'in order to list new places, login' %></p>
 <% end %>
 
- <ul>
- <% @places.each do |place| %>
- 	<li><%= link_to place.name, place_path(place)%></li>
- <% end %>
- </ul>
-</div>
+

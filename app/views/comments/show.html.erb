@@ -1,3 +1,4 @@
+<div class="comment">
 <h3> comment added by an user</h3>
 
 <p><%= @comment.user.name %></p>
@@ -7,4 +8,5 @@
 
 
 <%= link_to 'Delete Comment', group_comment_path(@comment.group.id, @comment.id), method: :delete %>
-
+<div class="group_edit">
+</div>

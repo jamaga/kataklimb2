@@ -33,7 +33,7 @@
 
 
 
-   <% if current_user %>
+	<% if current_user %>
 		<%= link_to 'create new group', new_group_path%>
 	<% else %>
 	 <p><%= 'register to create groups!' %></p>
@@ -41,27 +41,25 @@
 
 
 <h3> checkout the users by their climbing level </h3>
-<table class="table_groups2">
+<table class="table levels_table">
     <thead>
-        <tr>
-        <th>Level</th>
-        <br>
-        <th>User</th>
-        </tr>
+      <tr>
+      	<th>Level</th>
+      	<th>User</th>
+      </tr>
     </thead>
     	<% @groups.each do |group| %>
     		<% group.users.each do |user|  %>
-    		<% user.climbing_level %>
     			<tr>
-	     			<td>
-	     				<%= user.climbing_level %>
+    				<td>
+    					<%= user.climbing_level %>
 	     			</td>
 	     			<td>
 	     				<%= link_to user.name, user_path(user.id) %>
 	     			</td>
 	     		</tr>
-	     	<% end -%>
-	    <% end -%>
+	     	<% end %>
+	    <% end %>
 </table>
 
 

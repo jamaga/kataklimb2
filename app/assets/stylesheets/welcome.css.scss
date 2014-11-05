@@ -14,6 +14,10 @@
 
 }
 
+a {
+	text-decoration: none;
+}
+
  // body::after {
 	
 	//  content: "";
@@ -52,6 +56,7 @@ div.yield{
 header{
 	outline:solid 4px solid;
 	border-radius: 8px;
+	text-decoration: none;
 }
 
 header nav ul{
@@ -68,7 +73,7 @@ header nav li {
 	height: 21px;
 	width: 150px;
 	border-radius: 10px;
-	background-color: ivory;
+	background-color: whitesmoke;
 }
 
 header h1 {
@@ -78,7 +83,15 @@ header h1 {
 	font-size: 20px;
 	/*margin-bottom: 5px;*/
 	color: ivory;
+	text-decoration: none;
+	background-color: tomato;
+
+
 }
+
+
+
+
 
 header ul li {
 	
@@ -87,6 +100,7 @@ header ul li {
 	border-radius: 10px;
 	text-align: center;
 	padding:2px 0 0;
+	text-decoration: none;
 }
 
 header a {
@@ -94,7 +108,10 @@ header a {
 
 }
 
-header 	a:hover {text-shadow: 0 0 5px #999;}
+header 	a:hover {
+text-shadow: 0 0 5px #999;
+text-decoration: none;
+}
 //header a:visited { color: lightsteelblue }
 
 

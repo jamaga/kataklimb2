@@ -35,8 +35,10 @@
 	<% end %>
 </div>
 
-<%= link_to 'make a comment', new_group_comment_path(@group.id) %>
+<%= link_to 'make a comment', new_group_comment_path(@group.id) %></br><br>
 
+
+<br><h4> Coments made by users: </h4>
 <% @group.comments.each do |comment| %>
 	<%= link_to comment.title, group_comment_path(@group.id, comment.id) %>
 <% end -%>
