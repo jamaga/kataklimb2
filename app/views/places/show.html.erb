@@ -14,7 +14,6 @@
 <% end %>
 <br>
 
-
 <dl class="dl-horizontal">
 	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
 </dl>
@@ -23,24 +22,22 @@
 
 	<%= link_to "Show all places", places_path %></p></br>
 
-
-
 <h4> Rating of the place: </h4>
 <% if @place.ratings.all.any? %>
 <% @place.average_rating.times do %>
 	<i class="fa fa-beer"></i><span class='space'></span>
 	<% end %>
 <% end -%>
-</div>
-</br>
 
 
 <% if current_user.rated_places.include?(@place) %>
-	<p><%= 'you have already rated this place' %><p>
-	<% else %>
-	<p><%= link_to "rate this place", new_place_rating_path(@place.id)%>
-	</p>
+	<p><%= 'you have already rated this place' %></p>
+	<% else -%>
+	<h4>
+	<%= link_to "rate this place", new_place_rating_path(@place.id)%>
+	</h4>
 <% end -%>
+</div>
 
 
 <div id="map-canvas"></div>
