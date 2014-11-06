@@ -6,21 +6,19 @@
  	font-family: 'Nunito', sans-serif;
  	color: #002635;
  	position: relative;
- 	  -webkit-background-size: cover;
+ 	-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-   background: url(1a_dimmed.jpg) no-repeat center center fixed;
+  background: url(1a_dimmed.jpg) no-repeat center center fixed;
 
 }
-
-a {
-	text-decoration: none;
+a:hover{
+	text-decoration:none !important;
 }
-
-body a:hover {
-text-shadow: 0 0 5px #999;
-text-decoration: none;
+body nav > ul > li > a:hover {
+	text-shadow: none;
+	text-decoration: none !important;
 }
 
  // body::after {
@@ -112,10 +110,6 @@ header a {
 
 }
 
-header 	a:hover {
-text-shadow: 0 0 5px #999;
-text-decoration: none;
-}
 //header a:visited { color: lightsteelblue }
 
 
@@ -183,14 +177,14 @@ section.middle a {
 // .art1 {
 // 		background: url(hands.jpg) no-repeat center center;
 // }
-.bottom button {
-	background-color: steelblue;
-	color: white;
-	border-radius: 5px;
-	font-family: sans-serif;
-	font-size: 12px;
-	margin-top: 30px;
-}
+// .bottom button {
+// 	background-color: steelblue;
+// 	color: white;
+// 	border-radius: 5px;
+// 	font-family: sans-serif;
+// 	font-size: 12px;
+// 	margin-top: 30px;
+// }
 
 .bottom h1 {
 font-size: 18px;
