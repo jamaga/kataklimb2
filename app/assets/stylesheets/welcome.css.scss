@@ -21,6 +21,10 @@ body nav > ul > li > a:hover {
 	text-decoration: none !important;
 }
 
+td {
+	font-size: 18px;
+}
+
 
 body a {
 	text-decoration: none;
@@ -63,18 +67,19 @@ header nav li {
 	width: 140px;
 	border-radius: 3px;
 	background-color: whitesmoke;
+	font-weight: bold;
 }
 
 header h1 {
 	position: relative;
 	top:10px;
 	 	text-align: center;
-	font-size: 24px;
+	font-size: 28px;
 	margin-bottom: 5px;
 	color: white;
 	text-decoration: none;
 	margin-bottom: 30px;
-
+	font-weight: bold;
 
 }
 
