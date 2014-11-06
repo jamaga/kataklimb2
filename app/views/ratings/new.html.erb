@@ -1,4 +1,8 @@
-<%= form_for [@place, @rating] do |f| %>
-  <%= f.number_field :score, in: 0..5 %>
- <%= f.submit 'Submit' %></br>
-<% end %>
+<div class="rating_new">
+	<h4><%= 'Rate from from 0 to 5' %></h4>
+	<%= form_for [@place, @rating] do |f| %>
+  	<%= f.number_field :score, in: 0..5 %>
+  	<%= f.hidden_field :user_id , value: current_user.id%>
+ 	<%= f.submit 'Submit' %></br>
+	<% end %>
+</div>

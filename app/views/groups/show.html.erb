@@ -1,7 +1,7 @@
 <div class="group_show">
 <h3><%= @group.name %></h3>
 
-<h4><%= 'required climbing level to join: ' + @group.climbing_level %>
+<h4><%= 'required climbing level to join: ' + @group.climbing_level %></h4>
 
 <h3>Members of this Group:</h3>
 
@@ -17,8 +17,11 @@
 </dl>
 
 <% if current_user && @group.users.include?(current_user) %>
-	<%= link_to "Update this group", edit_group_path(@group.id)%>  </br>
+	<%= link_to "Update this group", edit_group_path(@group.id)%>  
 <% end %>
+
+<br>
+</br>
 
 
 <%# if @group.users.include?(current_user)g.users.include?(u) %>
@@ -26,6 +29,12 @@
 <% if current_user && !@group.users.include?(current_user) %>
 	<%= link_to 'join', join_path(@group.id) %>
 <% end %>
+
+
+<% if current_user && @group.users.include?(current_user) %>
+	<%= link_to 'leave', leave_path(@group.id) %>
+<% end %>
+
 
 <div class="field">
 	<%= form_tag("/addplace", method: "post") do %>
@@ -35,10 +44,13 @@
 	<% end %>
 </div>
 
-<%= link_to 'make a comment', new_group_comment_path(@group.id) %>
+<%= link_to 'make a comment', new_group_comment_path(@group.id) %></br><br>
 
+
+<br><h4> Coments made by users: </h4>
+<ul>
 <% @group.comments.each do |comment| %>
-	<%= link_to comment.title, group_comment_path(@group.id, comment.id) %>
+<li><%= link_to comment.title, group_comment_path(@group.id, comment.id) %></li>
 <% end -%>
 </div>
 

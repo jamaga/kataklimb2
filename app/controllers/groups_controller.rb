@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
 			creator_id: current_user.id
 		)
 		redirect_to groups_path
-		@group.users << current_user
+		#@group.users << current_user
 	end
 
 	def show
@@ -69,16 +69,11 @@ class GroupsController < ApplicationController
   		end
   	end
 
-
- #  	if current_user.climbing_level == @group.climbing_level &&
- #  		(@group.capacity - @group.users.count > 0)
- #  		@group.users << current_user
- #  	redirect_to groups_path, notice: "You joined the group!!"
- #  	else
- #  		redirect_to groups_path, notice: "you need to have adequate climbing level!"
-	# 	end
-	# end
-
+  	def leave
+  		@group = Group.find(params[:group_id])
+  		@group.users.delete(current_user)
+  		redirect_to groups_path, notice: 'you have succesfully left group'
+  	end
 
 	private
 

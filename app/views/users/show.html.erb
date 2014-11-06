@@ -16,7 +16,12 @@
 
 <dl class="dl-horizontal">
 
-<%= button_to "Delete this user", user_path(@user), method: :delete %> </dl>
+<% if @user == current_user %>
+	<%= button_to "Delete this user", user_path(@user), method: :delete %> </dl>
+	<%= link_to "Update this user", edit_user_path(@user.id)%>
+<% else %>
+	<p><%= 'you can delete or modify only your profile' %></p>
+<% end -%>
 
-<%= link_to "Update this user", edit_user_path(@user.id)%>
+
 </div>

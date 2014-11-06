@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :ratings
   end
   get '/join/:group_id', to: 'groups#join', as: :join
+  get '/leave/:group_id', to: 'groups#leave', as: :leave
+
 
   get '/login', to: "login#new"
   post   "/login",  to: "login#create"

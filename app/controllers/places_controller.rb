@@ -9,7 +9,9 @@ class PlacesController < ApplicationController
 	def new
 		@place = Place.new
 	end
-
+	def show
+		@place = Place.find(params[:id])
+	end
 	def create
 		@place = Place.new(place_params)
 		if @place.save
@@ -44,12 +46,12 @@ class PlacesController < ApplicationController
 		redirect_to places_path, notice: "you have chose place for group"
 	end
 
-	#private
-	def get_place
-		@place = Place.find(params[:id])
-	end
+	private
+		def get_place
+			@place = Place.find(params[:id])
+		end
 
-	def place_params
-		params.require(:place).permit(:name, :kind, :location, :placeimage, :url)
-	end
+		def place_params
+			params.require(:place).permit(:name, :kind, :location, :placeimage, :url)
+		end
 end

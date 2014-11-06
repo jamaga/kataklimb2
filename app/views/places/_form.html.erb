@@ -1,4 +1,6 @@
+<div class="table_places">
 <%= simple_form_for @place do |f| %>
+	<%= f.label :name, 'Sector´s' %>
 	<%= f.input :name %>
 	<%= f.input :kind %>
 	<%= f.input :location %>
@@ -9,3 +11,4 @@
 <% end -%>
 
 	<%= link_to "show all places", places_path %>
+	</div>

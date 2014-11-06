@@ -11,15 +11,14 @@ class Place < ActiveRecord::Base
 
  	def average_rating
  		if ratings.any?
- 		sum = 0
-		self.ratings.each do |rating|
-			sum += rating.score 
+ 			sum = 0
+			self.ratings.each do |rating|
+				sum += rating.score 
+			end
 		end
 		sum / ratings.count
-		else
-			return 'the place has not been rated yet'
-		end
 	end
+
 end
 
 

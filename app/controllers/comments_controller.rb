@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 	before_filter :authenticate, except: [:index, :show]
+	
+
 
 	def index
 		@comments = Comment.all
@@ -46,7 +48,9 @@ class CommentsController < ApplicationController
 	end
 
 	private
-		def comment_params
-			params.require(:comment).permit(:title, :content)
-		end
+
+	def comment_params
+		params.require(:comment).permit(:title, :content)
+	end
+
 end
