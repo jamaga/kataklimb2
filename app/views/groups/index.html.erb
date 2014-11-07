@@ -1,11 +1,11 @@
 <div class="table_group">
-<h3> list of all the groups available: </h3>
+<h3> List of all groups available: </h3>
 
 <table class="table">
     <thead>
         <tr>
             <th>Capacity</th>
-            <th>No. of Members</th>
+            <th>Members</th>
             <th>Name</th>
             <th>Climbing Level</th>
             <th>Created by</th>
@@ -34,13 +34,13 @@
 
 
 	<% if current_user %>
-		<%= link_to 'create new group', new_group_path%>
+		<%= link_to 'Create new group', new_group_path%>
 	<% else %>
-	 <p><%= 'register to create groups!' %></p>
+	 <p><%= 'Register to create groups!' %></p>
 	 <%end %>
 
 
-<h3> checkout the users by their climbing level: </h3>
+<h3> Checkout the users by their climbing level: </h3>
 <table class="table levels_table">
     <thead>
       <tr>

@@ -1,12 +1,12 @@
 <div class="table_places">
-<h3> list of all places: </h3>
-
+<h3> List of all places: </h3>
 
 
 <table class="table">
+
     <thead>
         <tr>
-        <th>Sector</th>
+        <th>Climbing spot</th>
         <th>Loctation</th>
        
         <th>Type of rock</th>
@@ -32,7 +32,7 @@
 
 
 <% if current_user %>
-	<%= link_to 'create new place', new_place_path%>
+	<%= link_to 'Create new place', new_place_path%>
 <% else %>
 <p><%= 'in order to list new places, login' %></p>
 <% end %>

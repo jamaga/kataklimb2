@@ -25,13 +25,13 @@
 
 
 
-<h4> Rating of the place: </h4>
+<h4> Rating: </h4>
 <% if @place.ratings.all.any? %>
 <% @place.average_rating.times do %>
 	<i class="fa fa-beer"></i><span class='space'></span>
 	<% end %>
 <% end -%>
-</div>
+
 </br>
 
 
@@ -41,7 +41,7 @@
 	<p><%= link_to "rate this place", new_place_rating_path(@place.id)%>
 	</p>
 <% end -%>
-
+</div>
 
 <div id="map-canvas"></div>
 

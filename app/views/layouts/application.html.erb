@@ -19,18 +19,18 @@
 			<h1> puja el peu - page to connect people who want to climb in Barcelona and around it  </h1>
 			<nav>
 				<ul>
-					<li> <%= link_to 'Go Home ET', root_path %> </li>
+					<li> <%= link_to 'Go Home', root_path %> </li>
 					<% if current_user %>
-						<li><%= link_to 'log out here', logout_path, method: :destroy %></li>
-						<li><%= link_to 'your profile', user_path(current_user) %></li>
+						<li><%= link_to 'Log out', logout_path, method: :destroy %></li>
+						<li><%= link_to 'Your profile', user_path(current_user) %></li>
 						
 					<% else %>
-						<li><%= link_to 'login here', login_path %></li>
+						<li><%= link_to 'Login', login_path %></li>
 						<li> <%= link_to 'Register', register_path %> </li>
 
 					<% end %>
-					<li> <%= link_to 'Groups list', groups_path %> </li>
-					<li> <%= link_to 'Places list', places_path %> </li>
+					<li> <%= link_to 'Groups', groups_path %> </li>
+					<li> <%= link_to 'Places', places_path %> </li>
 
 				</ul>
 			</nav>
