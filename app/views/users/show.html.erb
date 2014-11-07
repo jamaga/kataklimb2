@@ -3,7 +3,7 @@
 
 <%= image_tag (@user.userpic.url), :class => "style_profilepic" %>
 
-<h3><%= 'climbing level:' + ' ' + @user.climbing_level %></h3>
+<h3><%= 'Climbing level:' + ' ' + @user.climbing_level %></h3>
 
 <h4> belongs to these groups:</h4>
 <ul>
@@ -20,7 +20,7 @@
 	<%= button_to "Delete this user", user_path(@user), method: :delete %> </dl>
 	<%= link_to "Update this user", edit_user_path(@user.id)%>
 <% else %>
-	<p><%= 'you can delete or modify only your profile' %></p>
+	<p><%= 'You can delete or modify only your profile' %></p>
 <% end -%>
 
 

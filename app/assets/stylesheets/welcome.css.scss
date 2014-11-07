@@ -188,3 +188,33 @@ line-height: 20px;
 	color: white;
 	font-size: 30px;
 }
+
+.logo {
+	position: relative;
+	top: 0px; 
+	left: 35px;
+}
+
+
+td {
+	color: white;
+	font-size: 22px;
+}
+
+td a {
+	color: white;
+	font-size: 22px;
+}
+
+a:hover{
+	text-decoration:none !important;
+	text-shadow: none;
+}
+
+th {
+	font-size: 22px;
+}
+
+li.nobg {
+	background: none;
+}

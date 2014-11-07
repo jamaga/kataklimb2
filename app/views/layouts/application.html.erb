@@ -12,6 +12,7 @@
 </head>
 <body>
 	<div class="container">
+		<%#= image_tag("logo.png", size: "200x200", class:"logo",  alt: "Edit Entry") %>
 		<% flash.each do |key, value| %>
 	    <%= content_tag(:div, value, :class => "flash #{key}") %>
 	  <% end %>
@@ -19,7 +20,8 @@
 			<h1> puja el peu - page to connect people who want to climb in Barcelona and around it  </h1>
 			<nav>
 				<ul>
-					<li> <%= link_to 'Go Home', root_path %> </li>
+					<li class='nobg'> <%= link_to image_tag("logo.png", size: "120x120", alt: "Edit Entry"), root_path %> 
+					</li>
 					<% if current_user %>
 						<li><%= link_to 'Log out', logout_path, method: :destroy %></li>
 						<li><%= link_to 'Your profile', user_path(current_user) %></li>
