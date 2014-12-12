@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-  <title>puja el peu</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<div class="container">
-		<% flash.each do |key, value| %>
-	    <%= content_tag(:div, value, :class => "flash #{key}") %>
-	  <% end %>
-		<header>
-			<h1> puja el peu - page to connect people who want to climb in Barcelona and around it  </h1>
-			<nav>
-				<ul>
-					<li> <%= link_to 'Go Home ET', root_path %> </li>
-					<% if current_user %>
-						<li><%= link_to 'log out here', logout_path, method: :destroy %></li>
-						<li><%= link_to 'your profile', user_path(current_user) %></li>
-						
-					<% else %>
-						<li><%= link_to 'login here', login_path %></li>
-						<li> <%= link_to 'Register', register_path %> </li>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-					<% end %>
-					<li> <%= link_to 'Groups list', groups_path %> </li>
-					<li> <%= link_to 'Places list', places_path %> </li>
+    <title>puja el peu</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-				</ul>
-			</nav>
-		</header>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <%= csrf_meta_tags %>
+  </head>
 
-		<div class="yield">
+  <body>
+    <div class="container">
+    <%#= image_tag("logo.png", size: "200x200", class:"logo",  alt: "Edit Entry") %>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, :class => "flash #{key}") %>
+    <% end %>
+    <header>
+      <h1> puja el peu - page to connect people who want to climb in Barcelona and around it  </h1>
+      <nav>
+        <ul>
+          <li class='nobg'> <%= link_to image_tag("logo.png", size: "120x120", alt: "Edit Entry"), root_path %> 
+          </li>
+          <% if current_user %>
+            <li><%= link_to 'Log out', logout_path, method: :destroy %></li>
+            <li><%= link_to 'Your profile', user_path(current_user) %></li>
 
-			<%= yield %>
-		
-		</div>
+          <% else %>
+            <li><%= link_to 'Login', login_path %></li>
+            <li> <%= link_to 'Register', register_path %> </li>
 
-		<footer>
-			
-		</footer>
-	</div>
+          <% end %>
 
+          <li> <%= link_to 'Groups', groups_path %> </li>
+          <li> <%= link_to 'Places', places_path %> </li>
 
-</body>
+        </ul>
+      </nav>
+    </header>
 
+    <div class="yield">
+
+      <%= yield %>
+    </div>
+
+    <footer>
+    </footer>
+
+    </div>
+  </body>
 </html>

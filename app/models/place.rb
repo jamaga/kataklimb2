@@ -1,25 +1,22 @@
 class Place < ActiveRecord::Base
-	has_many :groups
-	has_many :ratings
+  has_many :groups
+  has_many :ratings
 
-	has_attached_file :placeimage
- 	validates_attachment_content_type :placeimage, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :placeimage
+  validates_attachment_content_type :placeimage, :content_type => /\Aimage\/.*\Z/
 
- 	geocoded_by :location
+  geocoded_by :location
 
- 	after_validation :geocode 
+  after_validation :geocode 
 
- 	def average_rating
- 		if ratings.any?
- 		sum = 0
-		self.ratings.each do |rating|
-			sum += rating.score 
-		end
-		sum / ratings.count
-		else
-			return 'the place has not been rated yet'
-		end
-	end
+  def average_rating
+    if ratings.any?
+      sum = 0
+      self.ratings.each do |rating|
+      sum += rating.score 
+    end
+  end
+    sum / ratings.count
+  end
+
 end
-
-

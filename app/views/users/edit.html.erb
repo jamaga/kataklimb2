@@ -2,24 +2,22 @@
 <h2> edit this user </h2>
 
 <%= simple_form_for [@user] do |p| %>
-	<%= p.label :name %>
-	<%= p.text_field :name %>
+  <%= p.label :name %>
+  <%= p.text_field :name %>
 
-	<%= p.label :email %>
-	<%= p.text_field :email %>
+  <%= p.label :email %>
+  <%= p.text_field :email %>
 
-	<%= p.label :password %>
-	<%= p.password_field :password %>
+  <%= p.label :password %>
+  <%= p.password_field :password %>
 
-	<%= p.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
+  <%= p.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
 
-	<%= p.label :userpic %>
-	<%= p.file_field :userpic %>
+  <%= p.label :userpic %>
+  <%= p.file_field :userpic %>
+  <br>
 
-
-	<br>
-
-	<%= p.submit 'save' %>
-	<%= link_to 'cancel', user_path(@user) %>
+  <%= p.submit 'save' %>
+  <%= link_to 'cancel', user_path(@user) %>
 <% end %>
 </div>

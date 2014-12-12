@@ -1,14 +1,13 @@
 <div class="group_new">
 <h3> create a group </h3>
 
-
 <%= simple_form_for @group do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
-	<%= f.label :capacity %>
-	<%= f.number_field :capacity, in: 5..20 %>
-	<%= f.submit "create a group" %>
+  %= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.input :climbing_level, collection: ["5", "5+", "6a", "6a+", "6b", "6b+", "6c", "7a", "7b", "7c", "8a", "8b", "8c", "9 TOMA!!!!"] %>
+  <%= f.label :capacity %>
+  <%= f.number_field :capacity, in: 5..20 %>
+  <%= f.submit "create a group" %>
 <% end -%>
 
 </div>

@@ -14,3 +14,22 @@
  *= require bootstrap
  *= require_self
  */
+
+td {
+	color: white;
+	font-size: 22px;
+}
+
+td a {
+	color: white;
+	font-size: 22px;
+}
+
+a:hover{
+	text-decoration:none !important;
+	text-shadow: none;
+}
+
+th {
+	font-size: 22px;
+}

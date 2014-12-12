@@ -1,10 +1,15 @@
-<h3> comment added by an user</h3>
+<div class="comment">
+<h3> Comment added by:</h3>
 
-<p><%= @comment.user.name %></p>
+<h4><%= @comment.user.name %></h4>
 
 <h3><%= @comment.title %></h3>
 <p><%= @comment.content %></p>
 
-
-<%= link_to 'Delete Comment', group_comment_path(@comment.group.id, @comment.id), method: :delete %>
-
+<% if @comment.user == current_user %>
+  <%= link_to 'Delete Comment', group_comment_path(@comment.group.id, @comment.id), method: :delete %>
+<% else %>
+  <p><%= 'you can only delete your own comments' %></p>
+<% end -%>
+<div class="group_edit">
+</div>

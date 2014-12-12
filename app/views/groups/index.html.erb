@@ -1,51 +1,65 @@
 <div class="table_group">
-<h3> list of all the groups available: </h3>
+<h3> List of all groups available: </h3>
 
 <table class="table">
     <thead>
         <tr>
             <th>Capacity</th>
-            <th>No. of Members</th>
+            <th>Members</th>
             <th>Name</th>
             <th>Climbing Level</th>
             <th>Created by</th>
         </tr>
     </thead>
-     <% @groups.each do |group| %>
-	     <tr>
-	     	<td>
-	     		<%= group.capacity %>
-	     	</td>
-	     	 <td>
-	     		<%= group.users.count %>
-	     	</td>
-	     		<td>
-	     	<%= link_to group.name, group_path(group) %>
-	     	<td>
-	     		<%= group.climbing_level %>
-	     	</td>
-	     	 <td>
-	     		<%= group.creator.name %>
-	     	</td>
-	     </tr>
-		<% end %>
+    <% @groups.each do |group| %>
+      <tr>
+        <td>
+        <%= group.capacity %>
+        </td>
+        <td>
+          <%= group.users.count %>
+        </td>
+        <td>
+          <%= link_to group.name, group_path(group) %>
+        <td>
+          <%= group.climbing_level %>
+        </td>
+        <td>
+          <%= group.creator.name %>
+       </td>
+      </tr>
+    <% end %>
 </table>
 
 
 
-   <% if current_user %>
-		<%= link_to 'create new group', new_group_path%>
-	<% else %>
-	 <p><%= 'register to create groups!' %></p>
-	 <%end %>
+  <% if current_user %>
+    <%= link_to 'Create new group', new_group_path%>
+  <% else %>
+    <p><%= 'Register to create groups!' %></p>
+  <%end %>
 
 
-  <h3> checkout the users by their climbing level: </h3>
-  <% @groups.each do |group| %>
-	  <% group.users.each do |user|  %>
-			<% user.climbing_level %>
-			<li><%= link_to  (user.climbing_level + ' ' + user.name), user_path(user.id) %></li>
+<h3> Checkout the users by their climbing level: </h3>
+<table class="table levels_table">
+    <thead>
+      <tr>
+        <th>Level</th>
+        <th>User</th>
+      </tr>
+    </thead>
+      <% @groups.each do |group| %>
+        <% group.users.each do |user|  %>
+          <tr>
+            <td>
+              <%= user.climbing_level %>
+            </td>
+            <td>
+              <%= link_to user.name, user_path(user.id) %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+</table>
 
-	  <% end -%>
-  <% end -%>
 </div>

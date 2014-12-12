@@ -3,3 +3,5 @@ class AddCapacityToGroups < ActiveRecord::Migration
     add_column :groups, :capacity, :integer
   end
 end
+
+

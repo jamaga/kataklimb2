@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-
   resources :users
 
   resources :groups do
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
     resources :ratings
   end
   get '/join/:group_id', to: 'groups#join', as: :join
+  get '/leave/:group_id', to: 'groups#leave', as: :leave
 
   get '/login', to: "login#new"
   post   "/login",  to: "login#create"
@@ -30,8 +30,6 @@ Rails.application.routes.draw do
   post '/addplace', to: 'places#addplace'
   post '/addclimbinglevel', to: 'users#addclimbinglevel'
 
-
-  
  #group GET    /groups/:id(.:format)      groups#show
 
   # Example of regular route:
