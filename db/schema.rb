@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141105173719) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: true do |t|
     t.integer  "group_id"
     t.integer  "user_id"
@@ -22,11 +25,18 @@ ActiveRecord::Schema.define(version: 20141105173719) do
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["group_id"], name: "index_comments_on_group_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["group_id"], name: "index_comments_on_group_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-# Could not dump table "groups" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.string   "climbing_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "place_id"
+    t.integer  "creator_id"
+    t.integer  "capacity"
+  end
 
   create_table "groups_users", id: false, force: true do |t|
     t.integer "group_id"
@@ -57,7 +67,7 @@ ActiveRecord::Schema.define(version: 20141105173719) do
     t.integer  "user_id"
   end
 
-  add_index "ratings", ["place_id"], name: "index_ratings_on_place_id"
+  add_index "ratings", ["place_id"], name: "index_ratings_on_place_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
