@@ -8,20 +8,17 @@
 <h4> belongs to these groups:</h4>
 <ul>
 <% @user.groups.each do |group| %>
-<li><%= link_to group.name, group_path(group)%></li>
+  <li><%= link_to group.name, group_path(group)%></li>
 <% end %>
 </ul>
-
-
 
 <dl class="dl-horizontal">
 
 <% if @user == current_user %>
-	<%= button_to "Delete this user", user_path(@user), method: :delete %> </dl>
-	<%= link_to "Update this user", edit_user_path(@user.id)%>
+  <%= button_to "Delete this user", user_path(@user), method: :delete %> </dl>
+  <%= link_to "Update this user", edit_user_path(@user.id)%>
 <% else %>
-	<p><%= 'You can delete or modify only your profile' %></p>
+  <p><%= 'You can delete or modify only your profile' %></p>
 <% end -%>
-
 
 </div>

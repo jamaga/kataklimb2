@@ -11,58 +11,55 @@
             <th>Created by</th>
         </tr>
     </thead>
-     <% @groups.each do |group| %>
-	     <tr>
-	     	<td>
-	     		<%= group.capacity %>
-	     	</td>
-	     	 <td>
-	     		<%= group.users.count %>
-	     	</td>
-	     		<td>
-	     	<%= link_to group.name, group_path(group) %>
-	     	<td>
-	     		<%= group.climbing_level %>
-	     	</td>
-	     	 <td>
-	     		<%= group.creator.name %>
-	     	</td>
-	     </tr>
-		<% end %>
+    <% @groups.each do |group| %>
+      <tr>
+        <td>
+        <%= group.capacity %>
+        </td>
+        <td>
+          <%= group.users.count %>
+        </td>
+        <td>
+          <%= link_to group.name, group_path(group) %>
+        <td>
+          <%= group.climbing_level %>
+        </td>
+        <td>
+          <%= group.creator.name %>
+       </td>
+      </tr>
+    <% end %>
 </table>
 
 
 
-	<% if current_user %>
-		<%= link_to 'Create new group', new_group_path%>
-	<% else %>
-	 <p><%= 'Register to create groups!' %></p>
-	 <%end %>
+  <% if current_user %>
+    <%= link_to 'Create new group', new_group_path%>
+  <% else %>
+    <p><%= 'Register to create groups!' %></p>
+  <%end %>
 
 
 <h3> Checkout the users by their climbing level: </h3>
 <table class="table levels_table">
     <thead>
       <tr>
-      	<th>Level</th>
-      	<th>User</th>
+        <th>Level</th>
+        <th>User</th>
       </tr>
     </thead>
-    	<% @groups.each do |group| %>
-    		<% group.users.each do |user|  %>
-    			<tr>
-    				<td>
-    					<%= user.climbing_level %>
-	     			</td>
-	     			<td>
-	     				<%= link_to user.name, user_path(user.id) %>
-	     			</td>
-	     		</tr>
-	     	<% end %>
-	    <% end %>
+      <% @groups.each do |group| %>
+        <% group.users.each do |user|  %>
+          <tr>
+            <td>
+              <%= user.climbing_level %>
+            </td>
+            <td>
+              <%= link_to user.name, user_path(user.id) %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
 </table>
-
-
-
 
 </div>

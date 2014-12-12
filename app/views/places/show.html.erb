@@ -10,61 +10,50 @@
 
 <h3>Groups that go here:</h3>
 <% @place.groups.each do |group| %>
-	<li><%= link_to group.name, group_path(group)%></li>
+  <li><%= link_to group.name, group_path(group)%></li>
 <% end %>
 <br>
 
-
 <dl class="dl-horizontal">
-	<%= button_to "Delete this place", place_path(@place), method: :delete %> 
+  <%= button_to "Delete this place", place_path(@place), method: :delete %> 
 </dl>
 
-	<%= link_to "Update this place", edit_place_path(@place.id)%>  </br>
+<%= link_to "Update this place", edit_place_path(@place.id)%>  </br>
 
-	<%= link_to "Show all places", places_path %></p></br>
-
-
+<%= link_to "Show all places", places_path %></p></br>
 
 <h4> Rating: </h4>
 <% if @place.ratings.all.any? %>
 <% @place.average_rating.times do %>
-	<i class="fa fa-beer"></i><span class='space'></span>
-	<% end %>
+  <i class="fa fa-beer"></i><span class='space'></span>
+  <% end %>
 <% end -%>
 
 </br>
 
-
 <% if current_user.rated_places.include?(@place) %>
-	<p><%= 'you have already rated this place' %><p>
-	<% else %>
-	<p><%= link_to "rate this place", new_place_rating_path(@place.id)%>
-	</p>
+  <p><%= 'you have already rated this place' %><p>
+<% else %>
+  <p><%= link_to "rate this place", new_place_rating_path(@place.id)%></p>
 <% end -%>
 </div>
 
 <div id="map-canvas"></div>
 
-
 <script>
   jQuery(document).ready(function() {
-		var map;
-		var latitude = $('#lat').text();
-		var longitude = $('#long').text();
-		function initialize() {
-			var mapOptions = {
-				zoom: 15,
-				center: new google.maps.LatLng(latitude, longitude)
-			};
-			map = new google.maps.Map(document.getElementById('map-canvas'),
-			  mapOptions);
-		}
-		initialize();
+    var map;
+    var latitude = $('#lat').text();
+    var longitude = $('#long').text();
+    function initialize() {
+      var mapOptions = {
+        zoom: 15,
+        center: new google.maps.LatLng(latitude, longitude)
+      };
+      map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+    }
+    initialize();
   })
 </script>
 </div>
-
-
-
-
-

@@ -1,40 +1,36 @@
 <div class="table_places">
 <h3> List of all places: </h3>
 
-
 <table class="table">
 
     <thead>
         <tr>
         <th>Climbing spot</th>
         <th>Loctation</th>
-       
+
         <th>Type of rock</th>
         </tr>
-      
+
     </thead>
-    	<% @places.each do |place| %>
-    		<% place.name %>
-    			<tr>
-    				<td>
-	     				<%= link_to place.name, place_path(place) %>
-	     			</td>
-	     			<td>
-	     				<%= place.location %>
-	     			</td>
-	     			<td>
-	     				<%= place.kind %>
-	     			</td>
-	     		</tr>
-	     	<% end -%>
+      <% @places.each do |place| %>
+        <% place.name %>
+          <tr>
+            <td>
+              <%= link_to place.name, place_path(place) %>
+            </td>
+            <td>
+              <%= place.location %>
+            </td>
+            <td>
+              <%= place.kind %>
+            </td>
+          </tr>
+      <% end -%>
 </table>
 <br>
 
-
 <% if current_user %>
-	<%= link_to 'Create new place', new_place_path%>
+  <%= link_to 'Create new place', new_place_path%>
 <% else %>
 <p><%= 'in order to list new places, login' %></p>
 <% end %>
-
-
