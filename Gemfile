@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -38,6 +38,7 @@ gem 'bootstrap-sass'
 gem 'geocoder'
 gem 'simple_form'
 gem 'pg'
+gem 'rails_12factor'
 
 #gem 'jquery-raty-rails'
 # Use unicorn as the app server
